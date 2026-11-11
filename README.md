@@ -1,7 +1,5 @@
 # CPPI Portfolio Insurance — Risk-Constrained Leverage
 
-A short quantitative risk modeling project based on **KTH SF2980 Risk Management, Session 2, Problem 5**.
-
 ## Objective
 
 How much exposure to a risky asset can a Constant Proportion Portfolio Insurance (CPPI) strategy take while respecting different downside-risk limits? Are these decisions robust to a rise in market volatility?
@@ -12,7 +10,7 @@ One-period CPPI with risky gross return $R=\exp(\mu+\sigma Z)$, $Z\sim N(0,1)$, 
 
 $$V_1=V_0+\alpha(V_0-G)(R-1).$$
 
-- $G$: portfolio floor (the minimum desired future portfolio value, **not** the cash balance)
+- $G$: portfolio floor (the minimum desired future portfolio value)
 - $V_0-G$: cushion (capital above the floor)
 - $\alpha$: leverage multiplier applied to the cushion
 - Baseline $\mu=0.05$, $\sigma=0.20$, $p=0.01$
@@ -25,9 +23,9 @@ $$V_1=V_0+\alpha(V_0-G)(R-1).$$
 | (a) Floor-breach probability $\leq 1\%$ | **2.9426×** | $58.85 | $41.15 |
 | (b) ES constraint, $\gamma=0.10$ | **2.8800×** | $57.60 | $42.40 |
 
-*Dollar allocations are for the illustrative $100 portfolio and $80 floor; they are not given in the original exercise.*
+*Dollar allocations are for the illustrative $100 portfolio and $80 floor*
 
-For (b), the ES condition is equivalent to requiring that the **average portfolio value in the worst 1% of outcomes is at least $78**. This is the $80 floor minus 10% of the $20 cushion. Importantly, the worst 1% of outcomes are **not defined** as the events in which the floor is breached.
+For (b), the ES condition is equivalent to requiring that the **average portfolio value in the worst 1% of outcomes is at least $78**. This is the $80 floor minus 10% of the $20 cushion. 
 
 ![Baseline leverage](figures/leverage_comparison.png)
 
