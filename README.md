@@ -2,7 +2,9 @@
 
 ## Objective
 
-How much exposure to a risky asset can a Constant Proportion Portfolio Insurance (CPPI) strategy take while respecting different downside-risk limits? Are these decisions robust to a rise in market volatility?
+How much exposure to a risky asset can a Constant Proportion Portfolio Insurance (CPPI) strategy take while respecting different downside-risk limits? 
+
+Are these decisions robust to a rise in market volatility?
 
 ## Model
 
@@ -40,6 +42,9 @@ Keeping each leverage multiplier fixed at its baseline-calibrated value, we incr
 | 0.20 | 1.00% | 0.86% | $77.52 | $78.00 |
 | 0.30 | 6.05% | 5.61% | $69.08 | $69.73 |
 | 0.40 | 12.24% | 11.68% | $62.61 | $63.40 |
+
+
+Risk Tolerance Parameter $\gamma$ = 0.1
 
 **Finding:** The baseline-approved multipliers do not remain safe under higher volatility. An ES constraint limits average lower-tail loss, while the probability constraint limits the frequency of breaching the floor. Neither rule guarantees protection when the assumed return distribution changes.
 
