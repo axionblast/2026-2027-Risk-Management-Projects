@@ -17,7 +17,7 @@ $$V_1=V_0+\alpha(V_0-G)(R-1).$$
 - $\alpha$: leverage multiplier applied to the cushion
 - Baseline $\mu=0.05$, $\sigma=0.20$, $p=0.01$
 - Illustrative assumptions: $V_0=\$100$, $G=\$80$, $\gamma=0.10$
-
+- Risk Tolerance Parameter: $\gamma$ = 0.1
 ## Methods and results
 
 | Risk rule | Maximum leverage | Risky allocation* | Cash allocation* |
@@ -30,6 +30,10 @@ $$V_1=V_0+\alpha(V_0-G)(R-1).$$
 For (b), the ES condition is equivalent to requiring that the **average portfolio value in the worst 1% of outcomes is at least $78**. This is the $80 floor minus 10% of the $20 cushion. 
 
 ![Baseline leverage](figures/leverage_comparison.png)
+
+## Analysis Figure 1 — Maximum Leverage under Different Risk Constraints
+
+The probability-based constraint allows a maximum leverage of 2.943, compared with 2.880 under the ES constraint (γ = 0.10). In this setting, the ES-based approach results in a slightly more conservative allocation by limiting the severity of extreme downside outcomes rather than only the probability of breaching the portfolio floor.
 
 ## Volatility stress test
 
@@ -44,9 +48,14 @@ Keeping each leverage multiplier fixed at its baseline-calibrated value, we incr
 | 0.40 | 12.24% | 11.68% | $62.61 | $63.40 |
 
 
-Risk Tolerance Parameter $\gamma$ = 0.1
 
 **Finding:** The baseline-approved multipliers do not remain safe under higher volatility. An ES constraint limits average lower-tail loss, while the probability constraint limits the frequency of breaching the floor. Neither rule guarantees protection when the assumed return distribution changes.
+
+The baseline-calibrated leverage multipliers become insufficient to maintain the original risk limits as market volatility increases. Both floor-breach probability and extreme downside losses rise significantly under stress.
+
+Risk limits are only as reliable as the assumptions used to calibrate them. This highlights the importance of stress testing and reassessing leverage when market conditions change.
+
+
 
 ## Run locally
 
@@ -64,4 +73,3 @@ Run all cells from the project folder. The notebook reproduces the numerical res
 - Analytic parameter stress test, **not** a historical backtest or Monte Carlo simulation
 - Ignores transaction costs, jumps, slippage, and multi-period CPPI rebalancing
 
-**Educational modeling project, not financial advice.**
